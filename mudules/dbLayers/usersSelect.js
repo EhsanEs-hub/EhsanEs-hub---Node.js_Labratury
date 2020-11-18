@@ -1,4 +1,5 @@
 var conn = require('../mysql.js');
+var whereCreatore = require('../dbLayerObjectToArray.js');
 
 var usersSelect = {
     smallInfo : (con, callbackFunction)=>{
@@ -63,21 +64,28 @@ var usersSelect = {
             (con.register == undefined) ? undefined : con.register.toString(),
             ]
         ]
-        
-        var inputSqlDatas = [];
+        /*
+         var inputSqlDatas = [];
         var where = '';
         datas.forEach((Element, index)=>{
 
             if(Element[1] == undefined)return;
-            if(where) where += ' AND ';
+            if(where) where += ' AND \n';
+        // Element[0] is for our query
             where += Element[0];
             inputSqlDatas.push(Element[1]);
+        // if a data has two part for exp has a Between a to b
             if(Element[2] == undefined)return;
             inputSqlDatas.push(Element[2]);
         });
         if (where) sql += '\n WHERE ' + where;
         console.log('sql:',sql);
         conn.query(sql, inputSqlDatas, callbackFunction);
+        */
+       datas = whereCreatore(datas);
+       if (datas.query) sql += datas.query;
+        console.log('sql:',sql);
+        conn.query(sql, datas.data, callbackFunction);
     },
     inOut : ()=>{
         console.log('inOut is done ...')
