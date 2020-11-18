@@ -1,0 +1,32 @@
+smallInfo = user, userGroup > filter:userUsername > *
+		SELECT * FROM user
+					INNER JOIN userGroup USING (userGroupId)
+				WHERE user.userUsername = $username
+				
+--------------------------------------------------------------
+largeInfo = user,userGroup,userInfo > filter:userPhone,userUsername,userInfoFirstName,userInfoLastName,userInfoBirthday > *
+		SELECT * FROM user	
+					INNER JOIN userGroup USING (userGroupId)
+					INNER JOIN userInfo USING (userId)	
+				WHERE
+						user.userUsername = $username AND
+						userInfo.userInfoFirstName LIKE $firstname AND
+						userInfo.userInfoLastName LIKE $lastname AND
+						userInfo.userInfoBirthday LIKE $birthday AND
+						userInfo.userInfoEmail LIKE $email AND
+						userInfo.userInfoPhone LIKE $phone AND
+						userInfo.userInfoNationalCode LIKE $nationalCode AND
+						userInfo.userInfoAddress = $address AND
+						userInfo.userInfoPostCode LIKE $postCode AND
+						userInfo.userInfoRegistrationDate LIKE $register 
+
+------------------------------------------------------------------
+inOut = user,userGroup,userInfo,userInOut > filter:userUsername,userInOutMode,userInOutTime > *
+		SELECT * FROM user	
+					INNER JOIN userGroup USING (userGroupId)
+					INNER JOIN userInfo USING (userId)
+					INNER JOIN userInOut USING (userId)	
+				WHERE
+						user.userUsername = $username AND
+						userInOut.userInOutMode = $userInOutMode AND
+						userInOut.userInOutTime BETWEEN $startTime AND $endTime 

@@ -1,0 +1,39 @@
+INSERT INTO userGroup('userGroupName') VALUES ($userGroupName)
+--------------------------------------------------------------------
+INSERT INTO user
+						('userUsername',
+						'userPassword',
+						'userStatus',
+						'userGroupId')
+				VALUES
+						($userUsername,
+						$userPassword,
+						$userStatus,
+						$userGroupId)
+						
+$userId = SELECT userId FROM user WHERE userUsername = $userUsername
+
+INSERT INTO userInfo
+							('userId',
+							'userInfoFirstName',
+							'userInfoLastName',
+							'userInfoBirthday',
+							'userInfoEmail',
+							'userInfoPhone',
+							'userInfoNationalCode',
+							'userInfoAddress',
+							'userInfoPostCode',
+							'userInfoRegistrationDate')
+					VALUES
+							($userId,
+							$userInfoFirstName,
+							$userInfoLastName,
+							$userInfoBirthday,
+							$userInfoEmail,
+							$userInfoPhone,
+							$userInfoNationalCode,
+							$userInfoAddress,
+							$userInfoPostCode,
+							$userInfoRegistrationDate)						
+						
+						
