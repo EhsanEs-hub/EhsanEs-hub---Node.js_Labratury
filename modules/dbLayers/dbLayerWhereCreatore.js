@@ -17,13 +17,14 @@ var creator = (datas)=>{
     datas.forEach((Element, index)=>{
 
         if(Element[1] == undefined)return;
+    // where is empty as default, if there is a query in where add it AND
         if(where) where += ' AND \n';
     // Element[0] is for our query
         where += Element[0];
         inputSqlDatas.push(Element[1]);
     // if a data has two part for exp has a Between a to b
-        if(Element[2] == undefined)return;
-        inputSqlDatas.push(Element[2]);
+     // if(Element[2] == undefined)return;
+     // inputSqlDatas.push(Element[2]);
     });
     if (where) where += '\n WHERE ' + where;
     return {
