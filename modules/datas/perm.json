@@ -1,31 +1,27 @@
 {
-     "perms " :{
-         "0 " :  "guest ",
-         "1 " :  "admin ",
-         "2 " :  "operator ",
-         "3 " :  "financial ",
-         "4 " :  "technecian "
-    },
-     "api " : {
-
-         "users ":{
-
-             "login " : { "perms ":[],  "addr ": "./users/login.js "},
-             "insertGroup " : { "perms ":[],  "addr ": "./users/insertGroup.js "},    
-             "insertUser " : { "perms ":[],  "addr ": "./users/insertUser.js "},     
-             "insertInfo " : { "perms ":[],  "addr ": "./users/insertInfo.js "},   
-             "selectGroup " : { "perms ":[],  "addr ": "./users/selectGroup.js "},   
-             "selectUser " : { "perms ":[],  "addr ": "./users/selectUser.js "},     
-             "selectInfo " : { "perms ":[],  "addr ": "./users/selectInfo.js "},    
-             "deleteGroup " : { "perms ":[],  "addr ": "./users/deleteGroup.js "},     
-             "deleteUser " : { "perms ":[],  "addr ": "./users/deleteUser.js "},    
-             "deleteInfo " : { "perms ":[],  "addr ": "./users/deleteInfo.js "},     
-             "updateGroup " : { "perms ":[],  "addr ": "./users/updateGroup.js "},    
-             "updateUser " : { "perms ":[],  "addr ": "./users/updateUser.js "},  
-             "updateInfo " : { "perms ":[],  "addr ": "./users/updateInfo.js "},
-    
-        }
-    }
-    
-  
+    "perms":{
+        "0":"guest",
+        "1":"admin",
+        "2":"operator",
+        "3":"financial",
+        "4":"technecian",
+        "5":"system"
+        },
+    "api":{
+        "users":{
+            "login":{"perms":["0"],"addr":"./users/login.js"},
+            "insertGroup":{"perms":["1"],"addr":"./users/insertGroup.js"},    
+            "insertUser":{"perms":["1"],"addr":"./users/insertUser.js"},     
+            "insertInfo":{"perms":["1"],"addr":"./users/insertInfo.js"},   
+            "selectGroup":{"perms":["1","2","3","4"],"addr":"./users/selectGroup.js"},   
+            "selectUser":{"perms":["1","2","3","4"],"addr":"./users/selectUser.js"},     
+            "selectInfo":{"perms":["1","2","3","4"],"addr":"./users/selectInfo.js"},    
+            "deleteGroup":{"perms":["1"],"addr":"./users/deleteGroup.js"},     
+            "deleteUser":{"perms":["1"],"addr":"./users/deleteUser.js"},    
+            "deleteInfo":{"perms":["1"],"addr":"./users/deleteInfo.js"},     
+            "updateGroup":{"perms":["1"],"addr":"./users/updateGroup.js"},    
+            "updateUser":{"perms":["1"],"addr":"./users/updateUser.js"},  
+            "updateInfo":{"perms":["1"],"addr":"./users/updateInfo.js"}  
+            }
+        }  
 }

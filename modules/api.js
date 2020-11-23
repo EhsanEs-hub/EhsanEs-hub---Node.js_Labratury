@@ -8,8 +8,8 @@ app.all('/users',(req,res,next)=>{
 })
 */
 
-app.all('/users/:mode/:func',require('./api/users.js'));
+app.all('/users/:mode/:func', require('./users.js'));
 
-app.all('/users/login',require('./api/users/login.js'));
+// app.all('users/login',require('./api/users/login.js'));
 
 module.exports = app;

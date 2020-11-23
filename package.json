@@ -20,7 +20,10 @@
   },
   "homepage": "https://github.com/EhsanEs-hub/Node.js_Labratury#readme",
   "dependencies": {
+    "cookie-session": "^1.4.0",
     "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "json": "^10.0.0",
     "mysql": "^2.18.1"
   }
 }
