@@ -9,7 +9,9 @@
         },
     "api":{
         "users":{
-            "login":{"perms":["0"],"addr":"./users/login.js"},
+            "login":{"perms":["1","2","3","4","5"],"addr":"./users/login.js"},
+            "logout":{"perms":["0"],"addr":"./users/logout.js"},
+            "getSession":{"perms":["1","2","3","4","5"],"addr":"./users/getSession.js"},
             "insertGroup":{"perms":["1"],"addr":"./users/insertGroup.js"},    
             "insertUser":{"perms":["1"],"addr":"./users/insertUser.js"},     
             "insertInfo":{"perms":["1"],"addr":"./users/insertInfo.js"},   
